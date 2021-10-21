@@ -214,5 +214,105 @@ ReactJS
                     const securedDeptList = Secured(DeptList)
                     const securedProjectsList = Secured(ProjectsList)
 
+    JSX
+    ------------------------------------------------------------------------------------
+        JavaScript eXtended Markup Language.
+
+        Assign a markup to a javascirpt variable.
+
+            const myHeaderElement = <h1>A simple heading</h1>.
+
+        Javascript functions can return a markup
+
+            function myFooterMarkup(){
+                return (<footer><p>A footer text</p></footer>);
+            }
+
+        Interpolation
+
+            <element>{javascriuptExpression}</element>
+
+            <h1>{pageTitle}</h1>
+
+            <h1>Hello, {formatName(user)}!</h1>
+
+            <p>Total Bill Amount is INR.{(rate*qty)+tax} </p>
+
+        Binding Attributes
+
+            const myLogoEle = <img src="../imgs/logo.png" />
+
+            const imgPath = "../imgs/logo.png";
+            const myLogoEle = <img src={imgPath} />
+
+        Conditional And Iterative Rendering
+
+            const friendsListElement = (
+                <div>
+                    {friends.length==0 ?
+                        <p>No friends as of now.</p> :
+                        <ul>
+                            {friends.map(friend => <li>{friend}</li>)}
+                        </ul>
+                    }
+                </div>
+            );
+
+     creating a react app
+    ------------------------------------------------------------------------------------
+ 
+        1. Manual Way of doing it
+                md react-app01
+                cd react-app01
+                npm init -y
+                npm install react-dom react-scripts react-test jest .... --save
+                
+                create our project structure ...
+
+        2. The create-react-app tool can also be sued
+
+                npx create-react-app react-app01
 
 
+    Component state
+    ------------------------------------------------------------------------------------
+
+        this.state is a datamemeber offered by React.Component
+
+        it is used to hold all the data that the current component has to manage.
+
+        this.state is a immutable object.
+
+        state is always being monitored and as and when the state changes, the compoent is rendered again.
+
+        this.setState(partialState) used to pass cahgnes to the current state, each time
+        setState method is called a new state object is created and the older state is replaced, and
+        the render() method is triggered.
+
+        this.setState is never to be called from render() method.
+
+    CaseStudy - BudgetManager
+    ------------------------------------------------------------------------------------
+
+        Each user of our app must be able to record all his monthly trnasactions.
+        We need to allow hime to add / delete/ modify and retrive the transactions.
+        Each transaction will be either a SPENDING or an INCOME
+        Finally display the Statement.
+
+    Integrating bootstrap 
+    ------------------------------------------------------------------------------------
+        1. Install it locally and refer to it
+                npm install bootstrap --save
+                index.js
+                    import 'bootstrap/dist/css/bootstrap.min.css';
+
+        2. Refer to the CDN
+            index.html
+                <link rel="stylesheet" href="" />
+
+
+    Working with forms
+    ------------------------------------------------------------------------------------
+
+
+                
