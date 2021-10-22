@@ -1,7 +1,7 @@
 const Header = props => (
-    <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand">Budget Manager</a>
+    <nav className="navbar navbar-dark bg-dark navbar-expand-sm">
+        <div className="container-fluid">
+            <a href="#" className="navbar-brand">Budget Manager</a>
         </div>
     </nav>
 );
