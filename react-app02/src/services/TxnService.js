@@ -7,7 +7,7 @@ let txns = [
     {id:5,header:'Car EMI',amount:5500,dot:'2021-01-05',type:'EXPENSE'}
 ];
 
-export default {
+const txnService = {
     getAll : () => txns,
 
     getById: id => txns.find(t => t.id===id),
@@ -17,14 +17,16 @@ export default {
     update: txn => {
         let index=txns.findIndex(t => t.id===txn.id);
         if(index===-1)
-            throw "No such transaction found";
+            throw new Error("No such transaction found");
         txns[index]=txn;
     },
 
     remove: id => {
         let index=txns.findIndex(t => t.id===id);
         if(index===-1)
-            throw "No such transaction found";
+            throw new Error("No such transaction found");
         txns.splice(index,1);
     }
 };
+
+export default txnService;

@@ -20,15 +20,17 @@ const TxnSummary = props => {
  
     return (
         <Fragment>
-            <tr>
-                <th className="text-end" colSpan="3">Total</th>
-                <th className="text-end">{totalC}</th>
-                <th className="text-end">{totalD}</th>
-            </tr>
-            <tr>
-                <th className="text-end" colSpan="4">Balance</th>
-                <th className="text-end">{bal}</th>
-            </tr>
+            <div class="row">
+                <div className="col fw-bolder text-end">Total</div>
+                <div className="col-1 fw-bolder text-end">{totalC}</div>
+                <div className="col-1 fw-bolder text-end">{totalD}</div>
+                <div className="col-3"></div>
+            </div>
+            <div class="row">
+                <div className="col fw-bolder text-end">Balance</div>
+                <div className="col-1 fw-bolder text-end">{bal}</div>
+                <div className="col-3"></div>
+            </div>
         </Fragment>
 
     );

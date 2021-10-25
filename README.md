@@ -310,9 +310,12 @@ ReactJS
             index.html
                 <link rel="stylesheet" href="" />
 
-
     Working with forms
     ------------------------------------------------------------------------------------
+
+        Controlled Components:
+
+            <input value={this.state.fields}  onChange={e => this.setState({field:e.target.value})}/>
 
 
                 
