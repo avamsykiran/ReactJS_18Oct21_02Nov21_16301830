@@ -317,5 +317,20 @@ ReactJS
 
             <input value={this.state.fields}  onChange={e => this.setState({field:e.target.value})}/>
 
+     Assignment: InventoryManagementSystem
+    ------------------------------------------------------------------------------------
 
+        an array of items as [
+            {id:1,name:'A4 Sheet Bundle',qty:45,rate:156.77,stockType:'SOLD'},
+            {id:2,name:'A4 Sheet Bundle',qty:45,rate:156.77,stockType:'PURCHASED'}
+        ]
+
+        list of all items
+        with summary like 
+            total itmes purchsed
+            and total items sold
+            total purchase value (sum of (rate*qty) of all purchases)
+            total sale value (sum of (rate*qty) of all sales)
+
+        able to add an item or remove one.
                 
