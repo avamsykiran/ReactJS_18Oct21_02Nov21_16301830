@@ -334,3 +334,70 @@ ReactJS
 
         able to add an item or remove one.
                 
+    React Component Life Cycle Methods
+    ------------------------------------------------------------------------
+
+            constructor()               //compoennt state initialization
+                ↓
+            render()                    //do not call setState here..
+                ↓
+            componentDidMount()         //means that the component loading is complete
+                |                       // equivalent to onload evnet
+                |                       // used to do the rest api calls.
+                |
+                \ When ever the state gets updated/chganed \
+                            |
+                            ↓
+                        render()            //do not call setState here..
+                            ↓
+                    componentDidUpdate()    //anything to be executed
+                                            //after the component is rendered,
+                                            ////do not call setState here..
+
+                 \ When ever an error occurs at the time component creation or rendering \
+                            |
+                            ↓
+                        componentDidCatch()
+                        
+                \ Just before the component un loads \
+                            |
+                            ↓
+                        componentWillUnmount()
+        
+    React Hooks
+    -------------------------------------------------
+
+                enable the functional component
+                to have lifecycle methods and local
+                state.
+
+                1. useState
+
+                            params: initialState
+                            return: [stateValue,functionToModifytheState]
+
+
+                    let [x,setX] = useState(0);
+                    let [emp,setEmp] = useState({empId:10,name:'vamsy'});
+
+                2. useEffect
+
+                            params: a function,an array (optional)
+                            return: none
+
+                        the function passed is executed
+                        after the render. (equivalent to
+                        componentDidMount and componentDidUpdate).
+
+                        the optional array is a array of dependencies.
+                        this array cna contain one or more local state
+                        fields of the component. When ever
+                        the local state field supplied in this array
+                        gets modified, the function passed will
+                        bve executed.
+
+                        if no array is passed, the fucntion executes
+                        after every render. 
+
+                        if an empty array is passed the function executes only once
+                        after the first render.
