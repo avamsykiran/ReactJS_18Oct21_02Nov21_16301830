@@ -13,22 +13,22 @@ const Statement = () => {
         setTxns([...txnService.getAll()]);
     }
 
-    const saveItem = item => {
-        txnService.update({...item,isEditing:undefined});
-        setTxns([...txnService.getAll()]);
-    }
-
     const delItemById = id => {
         txnService.remove(id);
         setTxns([...txnService.getAll()]);
     }
 
-    const markItemForEdit = id => {
-        setTxns(txns.map( t => t.id===id?{...t,isEditing:true}:t));
+    const saveItem = item => {
+        txnService.update({ ...item, isEditing: undefined });
+        setTxns([...txnService.getAll()]);
     }
-    
+
+    const markItemForEdit = id => {
+        setTxns(txns.map(t => t.id === id ? { ...t, isEditing: true } : t));
+    }
+
     const unmarkItemForEdit = id => {
-        setTxns(txns.map( t => t.id===id?{...t,isEditing:undefined}:t));
+        setTxns(txns.map(t => t.id === id ? { ...t, isEditing: undefined } : t));
     }
 
     return (
@@ -45,9 +45,9 @@ const Statement = () => {
                     <div className="col-3 fw-bolder">Action</div>
                 </div>
                 <TxnForm passTxnToParent={addItem} />
-                {txns.map(t => t.isEditing?
-                     <TxnForm passTxnToParent={saveItem} txnToEdit={t} cancelEdit={unmarkItemForEdit}/> :
-                     <TxnRow txn={t} key={t.id} delItem={delItemById} editItem={markItemForEdit}/>)}
+                {txns.map(t => t.isEditing ?
+                    <TxnForm passTxnToParent={saveItem} key={t.id} txnToEdit={t} cancelEdit={unmarkItemForEdit} /> :
+                    <TxnRow txn={t} key={t.id} delItem={delItemById} editItem={markItemForEdit} />)}
                 <TxnSummary txns={txns} />
             </div>
         </div>

@@ -402,7 +402,6 @@ ReactJS
                         if an empty array is passed the function executes only once
                         after the first render.
 
-
     json-server
     -----------------------------------------------------------------------
 
@@ -424,7 +423,7 @@ ReactJS
         axios.get(url) : Promise
         axios.put(url,reqBody) : Promise
         axios.post(url,reqBody) : Promise
-        axios.delete(url,reqBody) : Promise
+        axios.delete(url) : Promise
     
     React State Management - Redux
     ------------------------------------------------------------------------
