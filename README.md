@@ -480,7 +480,7 @@ ReactJS
                                                     wholeStateInStore
 
             dispatch         is a function that carrys an action
-                            from a component and gives it t the reducer.
+                            from a component and gives it to the reducer.
 
             
             mapDisptachToProps  is a function that maps 'dispatch calls' to
@@ -498,10 +498,10 @@ ReactJS
 
 
                 |-----------mapStateToProps,mapDispathToProps----------------------->   component2
-                |                  (suppy the state and dispatch)                             |
+                |                  (supply the state and dispatch)                            |
                 |                                                                             |
             store  -----------mapStateToProps,mapDispathToProps------>   component1           |
-                |                 (suppy the state and dispatch)                  |           |
+                |                 (supply the state and dispatch)                 |           |
                 |                                                                 |           |
                 |                                                                 |        dispatch(action)
                 |                                                                 |           |
