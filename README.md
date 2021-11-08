@@ -564,7 +564,7 @@ ReactJS
                 |                                                                 |      
                 |                                                                 |    
                 |                                                                 |          
-                |                                                         dispatch(actionObj)    
+                |                                                         dispatch(actionObjorFun)    
                 |                                                                 |          
                 |                                                                 |
                 |                                                         --------------------

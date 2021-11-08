@@ -28,7 +28,7 @@ const cumulativeAmount = (txns, type) => {
 const txnsReducer = (state = initialState(), action) => {
     let modifiedState = null;
 
-    let txns, totalCredit, totalDebit;
+    let txns, totalCredit, totalDebit,balance;
 
     switch (action.type) {
         case ADD_TXN:
@@ -56,13 +56,16 @@ const txnsReducer = (state = initialState(), action) => {
             break;
 
         case MARK_TXN_EDIT:
-            txns = state.txns.map(t => t.id === action.id ? { ...action.txn, isEditing: true } : t);
+            txns = state.txns.map(t => t.id === action.id ? { ...t, isEditing: true } : t);
             modifiedState = { ...state, txns };
             break;
             
         case UNMARK_TXN_EDIT:
-            txns = state.txns.map(t => t.id === action.id ? { ...action.txn, isEditing: undefined } : t);
+            txns = state.txns.map(t => t.id === action.id ? { ...t, isEditing: undefined } : t);
             modifiedState = { ...state, txns };
+            break;
+        default:
+            modifiedState={...state};
             break;
     }
 
