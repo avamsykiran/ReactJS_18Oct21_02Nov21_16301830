@@ -510,38 +510,6 @@ ReactJS
                 |<------modified state ---------- reducer <-----(action)-----------           |
                                                     | <--------(action)----------------------
 
-    React Routing
-    ------------------------------------------------------------------------
-
-        npm install --save react-router react-router-dom
-
-            react-router-dom
-
-                    <Link to="targetPath"> Link Text </Link>
-
-                    <BrowserRouter>
-                        <Component1 />
-                        <Component2 />  //will appear as common page layout
-
-                        <Route path="/home" component="C4" />
-                        <Route path="/about" component="C5" />
-                        <Route path="/contact" component="C6" />
-
-                    </BrowserRouter>
-
-                    <BrowserRouter>
-                        <Component1 />
-                        <Component2 />  //will appear as common page layout
-
-                        <Switch>
-                            <Route path="/" exact component="C3" />
-                            <Route path="/home" component="C4" />
-                            <Route path="/about" component="C5" />
-                            <Route path="/contact" component="C6" />
-                        </Switch>
-                    </BrowserRouter>
-                    
-                    <Redirect to="targetUrl" />
 
     redux-thunk  - Integrate AXIOS to Redux
     ----------------------------------------------------------------------------
@@ -584,4 +552,53 @@ ReactJS
                                                         |                                            |
                                                         | <---(action indicating failure)------------|
 
+    React Routing
+    ------------------------------------------------------------------------
 
+        npm install --save react-router react-router-dom
+
+            react-router-dom v5
+
+                    <Link to="targetPath"> Link Text </Link>
+
+                    <BrowserRouter>
+                        <Component1 />
+                        <Component2 />  //will appear as common page layout
+
+                        <Route path="/home" component="C4" />
+                        <Route path="/about" component="C5" />
+                        <Route path="/contact" component="C6" />
+
+                    </BrowserRouter>
+
+                    <BrowserRouter>
+                        <Component1 />
+                        <Component2 />  //will appear as common page layout
+
+                        <Switch>
+                            <Route path="/" exact component="C3" />
+                            <Route path="/home" component="C4" />
+                            <Route path="/about" component="C5" />
+                            <Route path="/contact" component="C6" />
+                        </Switch>
+                    </BrowserRouter>
+                    
+                    <Redirect to="targetUrl" />
+
+    react-router-dom v6
+
+                    <Link to="targetPath"> Link Text </Link>
+
+                    <BrowserRouter>
+                        <Component1 />
+                        <Component2 />  //will appear as common page layout
+
+                        <Routes>
+                            <Route path="/" element="C3" />
+                            <Route path="/home" element="C4" />
+                            <Route path="/about" element="C5" />
+                            <Route path="/contact" element="C6" />
+                        </Routes>
+                    </BrowserRouter>
+                    
+                    <Redirect to="targetUrl" />                    
